@@ -1,0 +1,198 @@
+---
+
+---
+
+<div flex-="row gap:1 grow">
+  <div flex-="col gap:1" id="sidebar" box-="square">
+    <div flex-="row" space-="px:1">
+      <button flex-="grow" size-="small">[S] Shop &#xf07a;</button>
+    </div>
+    <div flex-="col" space-="px:1" is-="typography-block">
+      <div>&#xf07a; <code>&lt;C-s&gt;</code> Shop</div>
+      <div>&#xf291; <code>&lt;C-c&gt;</code> Cart</div>
+      <div>&#xf0f3; <code>&lt;C-n&gt;</code> Notifications</div>
+      <div>&#xf02e; <code>&lt;C-w&gt;</code> Wishlist</div>
+      <hr />
+      <div>&#xf1b2; <code>&lt;C-e&gt;</code> Electronics</div>
+      <div>&#xf1ae; <code>&lt;C-b&gt;</code> Books</div>
+      <div>&#xf0fc; <code>&lt;C-d&gt;</code> Drinks</div>
+      <div>&#xf0f5; <code>&lt;C-f&gt;</code> Food</div>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="product-container">
+    <div flex-="row"><span is-="badge" variant-="background0">Products</span></div>
+
+    <div flex-="col gap:1" space-="px:1">
+      <div flex-="row gap:1 wrap">
+        <div
+          flex-="col gap:1"
+          is-="typography-block"
+          box-="round contain:none"
+          class="product-card"
+        >
+          <div flex-="row justify:between">
+            <span is-="badge" variant-="background0"><strong>Mechanical Keyboard</strong></span>
+            <span is-="badge" variant-="green">$89.99</span>
+          </div>
+          <div class="product-image" space-="px:1">
+            ┌───────────────┐
+            │ ┌─┐┌─┐┌─┐┌─┐┌─┐│
+            │ │ ││ ││ ││ ││ ││
+            │ └─┘└─┘└─┘└─┘└─┘│
+            └───────────────┘
+          </div>
+          <p space-="px:1">
+            Premium mechanical keyboard with RGB lighting and tactile switches.
+          </p>
+          <div flex-="row justify:between">
+            <span is-="badge" variant-="background1">In Stock</span>
+            <button size-="small" variant-="background1">Add to Cart &#xf07a;</button>
+          </div>
+        </div>
+
+        <div
+          flex-="col gap:1"
+          is-="typography-block"
+          box-="round contain:none"
+          class="product-card"
+        >
+          <div flex-="row justify:between">
+            <span is-="badge" variant-="background0"><strong>Terminal Mug</strong></span>
+            <span is-="badge" variant-="green">$19.99</span>
+          </div>
+          <div class="product-image" space-="px:1">
+            ┌─────────┐
+            │         │
+            │  $ _    │
+            │         │
+            └─────────┘
+          </div>
+          <p space-="px:1">
+            Ceramic mug with terminal commands design. Perfect for developers.
+          </p>
+          <div flex-="row justify:between">
+            <span is-="badge" variant-="background1">In Stock</span>
+            <button size-="small" variant-="background1">Add to Cart &#xf07a;</button>
+          </div>
+        </div>
+
+        <div
+          flex-="col gap:1"
+          is-="typography-block"
+          box-="round contain:none"
+          class="product-card"
+        >
+          <div flex-="row justify:between">
+            <span is-="badge" variant-="background0"><strong>WebTUI T-Shirt</strong></span>
+            <span is-="badge" variant-="green">$24.99</span>
+          </div>
+          <div class="product-image" space-="px:1">
+            ┌───────────┐
+            │   ┌───┐   │
+            │   │ W │   │
+            │   └───┘   │
+            └───────────┘
+          </div>
+          <p space-="px:1">
+            Cotton t-shirt with WebTUI logo. Available in multiple sizes.
+          </p>
+          <div flex-="row justify:between">
+            <span is-="badge" variant-="red">Out of Stock</span>
+            <button size-="small" variant-="background1" disabled>Add to Cart &#xf07a;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="cart-container">
+    <div flex-="row">
+      <span is-="badge" variant-="background0">Shopping Cart</span>
+    </div>
+
+    <div flex-="col gap:1" space-="px:1">
+      <div
+        flex-="col gap:1"
+        is-="typography-block"
+        box-="round contain:none"
+        class="cart-item"
+      >
+        <div flex-="row justify:between">
+          <span is-="badge" variant-="background0"><strong>Mechanical Keyboard</strong></span>
+          <span is-="badge" variant-="green">$89.99</span>
+        </div>
+        <div flex-="row justify:between" space-="px:1">
+          <div flex-="row gap:1 align:center">
+            <button size-="small" variant-="background1">-</button>
+            <span>1</span>
+            <button size-="small" variant-="background1">+</button>
+          </div>
+          <button size-="small" variant-="background1">&#xf1f8; Remove</button>
+        </div>
+      </div>
+
+      <div
+        flex-="col gap:1"
+        is-="typography-block"
+        box-="round contain:none"
+        class="cart-summary"
+      >
+        <div flex-="row justify:between">
+          <span>Subtotal:</span>
+          <span>$89.99</span>
+        </div>
+        <div flex-="row justify:between">
+          <span>Shipping:</span>
+          <span>$5.99</span>
+        </div>
+        <div flex-="row justify:between">
+          <span>Tax:</span>
+          <span>$9.60</span>
+        </div>
+        <hr />
+        <div flex-="row justify:between">
+          <strong>Total:</strong>
+          <strong>$105.58</strong>
+        </div>
+      </div>
+
+      <div flex-="row gap:1">
+        <button flex-="grow">Checkout &#xf09d;</button>
+        <button variant-="background1">Clear Cart &#xf1f8;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #sidebar {
+    min-width: 24ch;
+    height: 100%;
+    --box-border-color: var(--background1);
+  }
+
+  #product-container {
+    --box-border-color: var(--background1);
+  }
+
+  #cart-container {
+    --box-border-color: var(--background1);
+  }
+
+  .product-card {
+    --box-border-color: var(--background2);
+    min-width: 30ch;
+  }
+
+  .cart-item,
+  .cart-summary {
+    --box-border-color: var(--background2);
+  }
+
+  .product-image {
+    font-family: monospace;
+    white-space: pre;
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,181 @@
+---
+
+---
+
+<div flex-="row gap:1 grow">
+  <div flex-="col gap:1" id="sidebar" box-="square">
+    <div flex-="row" space-="px:1">
+      <button flex-="grow" size-="small">[C] Components &#xf1b3;</button>
+    </div>
+    <div flex-="col" space-="px:1" is-="typography-block">
+      <div>&#xf0c9; <code>&lt;C-b&gt;</code> Buttons</div>
+      <div>&#xf02c; <code>&lt;C-t&gt;</code> Badges</div>
+      <div>&#xf044; <code>&lt;C-i&gt;</code> Inputs</div>
+      <div>&#xf0f6; <code>&lt;C-y&gt;</code> Typography</div>
+      <hr />
+      <div>&#xf1b2; <code>&lt;C-x&gt;</code> Boxes</div>
+      <div>&#xf0ae; <code>&lt;C-l&gt;</code> Layouts</div>
+      <div>&#xf0c0; <code>&lt;C-u&gt;</code> Utilities</div>
+      <div>&#xf1fc; <code>&lt;C-c&gt;</code> Colors</div>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="component-container">
+    <div flex-="row"><span is-="badge" variant-="background0">Components</span></div>
+
+    <div flex-="col gap:2" space-="px:1">
+      <!-- Button Section -->
+      <section>
+        <h2>Buttons</h2>
+        <div flex-="row gap:1 wrap">
+          <button>Default</button>
+          <button variant-="background1">Background 1</button>
+          <button variant-="background2">Background 2</button>
+          <button variant-="foreground1">Foreground 1</button>
+          <button disabled>Disabled</button>
+        </div>
+        <div flex-="row gap:1 wrap" space-="py:1">
+          <button box-="round">Rounded</button>
+          <button box-="square">Square</button>
+          <button box-="double">Double</button>
+          <button size-="small">Small</button>
+        </div>
+        <div flex-="row gap:1 wrap">
+          <button>&#xf019; Download</button>
+          <button>&#xf093; Upload</button>
+          <button>&#xf1d8; Send</button>
+          <button>&#xf0c7; Save</button>
+        </div>
+      </section>
+
+      <!-- Badges Section -->
+      <section>
+        <h2>Badges</h2>
+        <div flex-="row gap:1 wrap">
+          <span is-="badge">Default</span>
+          <span is-="badge" variant-="background0">Background 0</span>
+          <span is-="badge" variant-="background1">Background 1</span>
+          <span is-="badge" variant-="background2">Background 2</span>
+          <span is-="badge" variant-="foreground1">Foreground 1</span>
+        </div>
+      </section>
+
+      <!-- Inputs Section -->
+      <section>
+        <h2>Inputs</h2>
+        <div flex-="col gap:1">
+          <input type="text" placeholder="Default input" />
+          <input type="password" placeholder="Password input" />
+          <div flex-="row gap:1 align:center">
+            <input type="checkbox" id="check1" />
+            <label for="check1">Checkbox</label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Typography Section -->
+      <section>
+        <h2>Typography</h2>
+        <div is-="typography-block">
+          <h1>Heading 1</h1>
+          <h2>Heading 2</h2>
+          <h3>Heading 3</h3>
+          <p>
+            This is a paragraph with <strong>bold</strong>, <em>italic</em>, and
+            <code>code</code> text. WebTUI provides clean typography styling.
+          </p>
+        </div>
+      </section>
+
+      <!-- Boxes Section -->
+      <section>
+        <h2>Boxes</h2>
+        <div flex-="row gap:1 wrap">
+          <div box-="square" space-="px:1">
+            Square Box
+          </div>
+          <div box-="round" space-="px:1">
+            Round Box
+          </div>
+          <div box-="double" space-="px:1">
+            Double Box
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="code-container">
+    <div flex-="row">
+      <span is-="badge" variant-="background0">Code</span>
+    </div>
+
+    <div flex-="col gap:1" space-="px:1">
+      <h2>Usage Example</h2>
+      <pre>
+# Button Example
+&lt;button&gt;Default&lt;/button&gt;
+
+# Badge Example
+&lt;span is-="badge"&gt;Default&lt;/span&gt;
+
+# Input Example
+&lt;input type="text" placeholder="Default input" /&gt;
+
+# Box Example
+&lt;div box-="square"&gt;
+  Square Box
+&lt;/div&gt;
+      </pre>
+
+      <h3>Installation</h3>
+      <pre>
+# Install with npm
+npm install @webtui/css
+
+# Or with yarn
+yarn add @webtui/css
+
+# Or with bun
+bun add @webtui/css
+      </pre>
+
+      <div flex-="row gap:1 wrap">
+        <button box-="round">&#xf019; Download</button>
+        <button box-="round">&#xf121; View Source</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #sidebar {
+    min-width: 24ch;
+    height: 100%;
+    --box-border-color: var(--background1);
+  }
+
+  #component-container {
+    --box-border-color: var(--background1);
+  }
+
+  #code-container {
+    --box-border-color: var(--background1);
+  }
+
+  section {
+    border-bottom: 1px solid var(--background1);
+    padding-bottom: 1lh;
+  }
+
+  section:last-child {
+    border-bottom: none;
+  }
+
+  pre {
+    white-space: pre;
+    overflow-x: auto;
+    background-color: var(--background1);
+    padding: 0.5lh 1ch;
+  }
+</style>
