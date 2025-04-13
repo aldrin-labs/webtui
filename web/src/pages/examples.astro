@@ -12,6 +12,7 @@ import AIChat from '@/components/examples/AIChat.astro';
 import AllComponents from '@/components/examples/AllComponents.astro';
 import Dashboard from '@/components/examples/Dashboard.astro';
 import Calendar from '@/components/examples/Calendar.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
 ---
 
 <Layout>
@@ -19,6 +20,19 @@ import Calendar from '@/components/examples/Calendar.astro';
     <Navbar />
     <div flex-="col grow" space-="px:1">
       <ThemeSwitcher />
+      <Breadcrumb paths={[
+        { label: 'Examples', href: '/webtui/examples/' }
+      ]} />
+      <div class="quick-links" flex-="row wrap" space-="px:1 my:1">
+        <span is-="typography-block">Quick Links: </span>
+        <a href="/webtui/examples/email/" is-="link" variant-="foreground1">Email</a> |
+        <a href="/webtui/examples/auth/" is-="link" variant-="foreground1">Auth</a> |
+        <a href="/webtui/examples/ecommerce/" is-="link" variant-="foreground1">Ecommerce</a> |
+        <a href="/webtui/examples/aichat/" is-="link" variant-="foreground1">AI Chat</a> |
+        <a href="/webtui/examples/dashboard/" is-="link" variant-="foreground1">Dashboard</a> |
+        <a href="/webtui/examples/calendar/" is-="link" variant-="foreground1">Calendar</a> |
+        <a href="/webtui/examples/allcomponents/" is-="link" variant-="foreground1">All Components</a>
+      </div>
       <Tabs tabs={["Email", "Auth", "Ecommerce", "AI Chat", "Dashboard", "Calendar", "All Components"]}>
         <div flex-="col grow"><Email /></div>
         <div flex-="col grow"><Auth /></div>
@@ -54,6 +68,23 @@ import Calendar from '@/components/examples/Calendar.astro';
       --foreground0: #fff;
       --foreground1: #ccc;
       --foreground2: #999;
+    }
+  }
+
+  .quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5ch;
+    margin-bottom: 1lh;
+  }
+
+  .quick-links a {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .quick-links {
+      font-size: 0.9em;
     }
   }
 </style>

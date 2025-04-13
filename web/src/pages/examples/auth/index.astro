@@ -1,0 +1,23 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navbar from '@/components/Navbar.astro';
+import ThemeSwitcher from '@/components/ThemeSwitcher.astro';
+import Auth from '@/components/examples/Auth.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+---
+
+<Layout>
+  <main flex-="grow col">
+    <Navbar />
+    <div flex-="col grow" space-="px:1">
+      <ThemeSwitcher />
+      <Breadcrumb paths={[
+        { label: 'Examples', href: '/webtui/examples/' },
+        { label: 'Auth', href: '/webtui/examples/auth/' }
+      ]} />
+      <div flex-="col grow">
+        <Auth />
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,23 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navbar from '@/components/Navbar.astro';
+import ThemeSwitcher from '@/components/ThemeSwitcher.astro';
+import Ecommerce from '@/components/examples/Ecommerce.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+---
+
+<Layout>
+  <main flex-="grow col">
+    <Navbar />
+    <div flex-="col grow" space-="px:1">
+      <ThemeSwitcher />
+      <Breadcrumb paths={[
+        { label: 'Examples', href: '/webtui/examples/' },
+        { label: 'Ecommerce', href: '/webtui/examples/ecommerce/' }
+      ]} />
+      <div flex-="col grow">
+        <Ecommerce />
+      </div>
+    </div>
+  </main>
+</Layout>

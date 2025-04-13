@@ -12,6 +12,13 @@ export default defineConfig({
   redirects: {
     '/docs': '/start/intro',
     '/start': '/start/intro',
+    '/examples/email': '/examples',
+    '/examples/auth': '/examples',
+    '/examples/ecommerce': '/examples',
+    '/examples/aichat': '/examples',
+    '/examples/dashboard': '/examples',
+    '/examples/calendar': '/examples',
+    '/examples/allcomponents': '/examples',
   },
   markdown: {
     rehypePlugins: [rehypeHeadingIds, rehypeTabIndex],
