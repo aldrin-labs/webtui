@@ -1,0 +1,351 @@
+---
+
+---
+
+<div flex-="row gap:1 grow" class="dashboard-layout">
+  <div flex-="col gap:1" id="sidebar" box-="square">
+    <div flex-="row" space-="px:1">
+      <button flex-="grow" size-="small">[D] Dashboard &#xf0e4;</button>
+    </div>
+    <div flex-="col" space-="px:1" is-="typography-block">
+      <div>&#xf0e4; <code>&lt;C-d&gt;</code> Dashboard</div>
+      <div>&#xf201; <code>&lt;C-s&gt;</code> Statistics</div>
+      <div>&#xf080; <code>&lt;C-g&gt;</code> Graphs</div>
+      <div>&#xf0ae; <code>&lt;C-t&gt;</code> Tasks</div>
+      <hr />
+      <div>&#xf013; <code>&lt;C-o&gt;</code> Settings</div>
+      <div>&#xf0c0; <code>&lt;C-u&gt;</code> Users</div>
+      <div>&#xf0f6; <code>&lt;C-r&gt;</code> Reports</div>
+      <div>&#xf05a; <code>&lt;C-h&gt;</code> Help</div>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="dashboard-container">
+    <div flex-="row"><span is-="badge" variant-="background0">System Dashboard</span></div>
+
+    <div flex-="col gap:2" space-="px:1" id="dashboard-content">
+      <!-- Stats Overview Section -->
+      <section>
+        <h2>System Overview</h2>
+        <div flex-="row gap:1 wrap">
+          <div box-="square" space-="px:1" class="stat-card">
+            <div flex-="row justify:between">
+              <span>CPU Usage</span>
+              <span is-="badge" variant-="background1">42%</span>
+            </div>
+            <div class="stat-bar">
+              <div class="stat-fill" style="width: 42%"></div>
+            </div>
+            <div class="stat-trend">&#xf062; +5% from last hour</div>
+          </div>
+
+          <div box-="square" space-="px:1" class="stat-card">
+            <div flex-="row justify:between">
+              <span>Memory</span>
+              <span is-="badge" variant-="background1">3.2/8 GB</span>
+            </div>
+            <div class="stat-bar">
+              <div class="stat-fill" style="width: 40%"></div>
+            </div>
+            <div class="stat-trend">&#xf063; -2% from last hour</div>
+          </div>
+
+          <div box-="square" space-="px:1" class="stat-card">
+            <div flex-="row justify:between">
+              <span>Disk Space</span>
+              <span is-="badge" variant-="background1">78%</span>
+            </div>
+            <div class="stat-bar">
+              <div class="stat-fill" style="width: 78%"></div>
+            </div>
+            <div class="stat-trend">&#xf062; +1% from yesterday</div>
+          </div>
+
+          <div box-="square" space-="px:1" class="stat-card">
+            <div flex-="row justify:between">
+              <span>Network</span>
+              <span is-="badge" variant-="background1">2.4 MB/s</span>
+            </div>
+            <div class="stat-bar">
+              <div class="stat-fill" style="width: 30%"></div>
+            </div>
+            <div class="stat-trend">&#xf062; +15% from last hour</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ASCII Chart Section -->
+      <section>
+        <h2>System Load (24h)</h2>
+        <div box-="square" space-="px:1" class="chart-container">
+          <pre class="ascii-chart">
+ 100% ┤                                                  ╭╮          
+      │                                                 ╭╯│          
+  75% ┤                                        ╭╮      │ │   ╭╮     
+      │                                       ╭╯╰╮    ╭╯ ╰╮ ╭╯╰╮    
+  50% ┤                              ╭╮      │  │   ╭╯   ╰╮│  │    
+      │                             ╭╯╰╮    ╭╯  ╰╮  │     ││  ╰╮   
+  25% ┤                   ╭╮       │  │   ╭╯    │ ╭╯     ╰╯   │   
+      │        ╭╮        │╰╮     ╭╯  ╰╮  │     ╰╮│            ╰╮  
+   0% ┼────────╯╰────────╯ ╰─────╯    ╰──╯      ╰╯             ╰──
+      00:00  04:00  08:00  12:00  16:00  20:00  00:00  04:00  08:00</pre>
+        </div>
+      </section>
+
+      <!-- Active Processes Section -->
+      <section>
+        <h2>Active Processes</h2>
+        <div box-="square" space-="px:1" class="process-list">
+          <table>
+            <thead>
+              <tr>
+                <th>PID</th>
+                <th>Process</th>
+                <th>CPU</th>
+                <th>Memory</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1234</td>
+                <td>nginx</td>
+                <td>0.2%</td>
+                <td>120MB</td>
+                <td><span is-="badge" variant-="background1">Running</span></td>
+              </tr>
+              <tr>
+                <td>2345</td>
+                <td>postgres</td>
+                <td>1.5%</td>
+                <td>450MB</td>
+                <td><span is-="badge" variant-="background1">Running</span></td>
+              </tr>
+              <tr>
+                <td>3456</td>
+                <td>node</td>
+                <td>5.2%</td>
+                <td>780MB</td>
+                <td><span is-="badge" variant-="background1">Running</span></td>
+              </tr>
+              <tr>
+                <td>4567</td>
+                <td>redis</td>
+                <td>0.8%</td>
+                <td>65MB</td>
+                <td><span is-="badge" variant-="background1">Running</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Recent Activity Section -->
+      <section>
+        <h2>Recent Activity</h2>
+        <div flex-="col gap:1" space-="px:1" class="activity-feed">
+          <div flex-="row justify:between" class="activity-item">
+            <span>&#xf071; System alert: High CPU usage detected</span>
+            <span is-="badge" variant-="background1">5 min ago</span>
+          </div>
+          <div flex-="row justify:between" class="activity-item">
+            <span>&#xf0c7; Backup completed successfully</span>
+            <span is-="badge" variant-="background1">1 hour ago</span>
+          </div>
+          <div flex-="row justify:between" class="activity-item">
+            <span>&#xf2f1; System restart scheduled</span>
+            <span is-="badge" variant-="background1">2 hours ago</span>
+          </div>
+          <div flex-="row justify:between" class="activity-item">
+            <span>&#xf019; Updates downloaded</span>
+            <span is-="badge" variant-="background1">3 hours ago</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="info-panel">
+    <div flex-="row"><span is-="badge" variant-="background0">System Info</span></div>
+
+    <div flex-="col gap:1" space-="px:1" class="info-content">
+      <h2>Server Details</h2>
+      
+      <div flex-="col gap:1">
+        <div flex-="row justify:between">
+          <span>Hostname:</span>
+          <span is-="badge" variant-="background1">webtui-server</span>
+        </div>
+        <div flex-="row justify:between">
+          <span>OS:</span>
+          <span is-="badge" variant-="background1">Linux 5.15.0</span>
+        </div>
+        <div flex-="row justify:between">
+          <span>Uptime:</span>
+          <span is-="badge" variant-="background1">15d 7h 23m</span>
+        </div>
+        <div flex-="row justify:between">
+          <span>IP Address:</span>
+          <span is-="badge" variant-="background1">192.168.1.100</span>
+        </div>
+      </div>
+
+      <h3>Hardware</h3>
+      <div flex-="col gap:1">
+        <div flex-="row justify:between">
+          <span>CPU:</span>
+          <span>Intel Xeon (8 cores)</span>
+        </div>
+        <div flex-="row justify:between">
+          <span>Memory:</span>
+          <span>8 GB DDR4</span>
+        </div>
+        <div flex-="row justify:between">
+          <span>Disk:</span>
+          <span>500 GB SSD</span>
+        </div>
+      </div>
+
+      <h3>Quick Actions</h3>
+      <div flex-="row gap:1 wrap">
+        <button box-="round" variant-="background1">&#xf2f1; Restart</button>
+        <button box-="round" variant-="background1">&#xf0c7; Backup</button>
+        <button box-="round" variant-="background1">&#xf019; Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dashboard-layout {
+    height: 100%;
+    min-height: 80vh;
+  }
+
+  #sidebar {
+    min-width: 24ch;
+    height: 100%;
+    --box-border-color: var(--background1);
+  }
+
+  #dashboard-container {
+    --box-border-color: var(--background1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 80vh;
+  }
+
+  #info-panel {
+    --box-border-color: var(--background1);
+    height: 100%;
+    min-height: 80vh;
+  }
+
+  .info-content {
+    height: calc(100% - 2rem);
+    overflow-y: auto;
+  }
+
+  #dashboard-content {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  section {
+    border-bottom: 1px solid var(--background1);
+    padding-bottom: 1lh;
+    margin-bottom: 1lh;
+  }
+
+  section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .stat-card {
+    flex: 1 1 200px;
+    --box-border-color: var(--background2);
+  }
+
+  .stat-bar {
+    height: 0.5lh;
+    background-color: var(--background1);
+    margin: 0.5lh 0;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .stat-fill {
+    height: 100%;
+    background-color: var(--foreground1);
+  }
+
+  .stat-trend {
+    font-size: 0.8em;
+    color: var(--foreground2);
+  }
+
+  .chart-container {
+    --box-border-color: var(--background2);
+    overflow-x: auto;
+  }
+
+  .ascii-chart {
+    font-family: monospace;
+    white-space: pre;
+    line-height: 1.2;
+    color: var(--foreground1);
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .process-list {
+    --box-border-color: var(--background2);
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.3lh 0.5ch;
+    text-align: left;
+    border-bottom: 1px solid var(--background1);
+  }
+
+  th {
+    color: var(--foreground1);
+  }
+
+  .activity-item {
+    padding: 0.3lh 0;
+    border-bottom: 1px solid var(--background1);
+  }
+
+  .activity-item:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    .dashboard-layout {
+      flex-direction: column;
+    }
+
+    #sidebar, #info-panel {
+      min-width: 100%;
+      height: auto;
+      min-height: auto;
+    }
+
+    #dashboard-container {
+      min-height: 60vh;
+    }
+
+    .stat-card {
+      flex: 1 1 100%;
+    }
+  }
+</style>

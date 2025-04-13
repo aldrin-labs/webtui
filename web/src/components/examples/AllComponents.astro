@@ -2,7 +2,7 @@
 
 ---
 
-<div flex-="row gap:1 grow">
+<div flex-="row gap:1 grow" class="components-layout">
   <div flex-="col gap:1" id="sidebar" box-="square">
     <div flex-="row" space-="px:1">
       <button flex-="grow" size-="small">[C] Components &#xf1b3;</button>
@@ -157,10 +157,16 @@ bun add @webtui/css
 
   #component-container {
     --box-border-color: var(--background1);
+    height: 100%;
+    min-height: 80vh;
+    overflow-y: auto;
   }
 
   #code-container {
     --box-border-color: var(--background1);
+    height: 100%;
+    min-height: 80vh;
+    overflow-y: auto;
   }
 
   section {
@@ -177,5 +183,21 @@ bun add @webtui/css
     overflow-x: auto;
     background-color: var(--background1);
     padding: 0.5lh 1ch;
+  }
+  
+  @media (max-width: 768px) {
+    .components-layout {
+      flex-direction: column;
+    }
+    
+    #sidebar, #code-container {
+      min-width: 100%;
+      height: auto;
+      min-height: auto;
+    }
+    
+    #component-container {
+      min-height: 60vh;
+    }
   }
 </style>

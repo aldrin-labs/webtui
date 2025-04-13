@@ -45,6 +45,7 @@ const hashIndex = Number(Astro.url.hash.split('-').at(-1) ?? 0);
       display: inline-flex;
       text-decoration: none;
       color: var(--foreground0);
+      margin-bottom: 0.5rem;
 
       &.active span:first-of-type {
         --badge-color: #fab387;
@@ -58,6 +59,17 @@ const hashIndex = Number(Astro.url.hash.split('-').at(-1) ?? 0);
 
   #content-container {
     min-height: 100vh;
+  }
+  
+  @media (max-width: 768px) {
+    #tabs {
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      
+      a {
+        font-size: 0.9em;
+      }
+    }
   }
 </style>
 

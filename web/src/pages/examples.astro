@@ -10,6 +10,8 @@ import Auth from '@/components/examples/Auth.astro';
 import Ecommerce from '@/components/examples/Ecommerce.astro';
 import AIChat from '@/components/examples/AIChat.astro';
 import AllComponents from '@/components/examples/AllComponents.astro';
+import Dashboard from '@/components/examples/Dashboard.astro';
+import Calendar from '@/components/examples/Calendar.astro';
 ---
 
 <Layout>
@@ -17,11 +19,13 @@ import AllComponents from '@/components/examples/AllComponents.astro';
     <Navbar />
     <div flex-="col grow" space-="px:1">
       <ThemeSwitcher />
-      <Tabs tabs={["Email", "Auth", "Ecommerce", "AI Chat", "All Components"]}>
+      <Tabs tabs={["Email", "Auth", "Ecommerce", "AI Chat", "Dashboard", "Calendar", "All Components"]}>
         <div flex-="col grow"><Email /></div>
         <div flex-="col grow"><Auth /></div>
         <div flex-="col grow"><Ecommerce /></div>
         <div flex-="col grow"><AIChat /></div>
+        <div flex-="col grow"><Dashboard /></div>
+        <div flex-="col grow"><Calendar /></div>
         <div flex-="col grow"><AllComponents /></div>
       </Tabs>
     </div>
