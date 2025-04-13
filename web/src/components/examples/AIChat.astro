@@ -1,0 +1,256 @@
+---
+
+---
+
+<div flex-="row gap:1 grow">
+  <div flex-="col gap:1" id="sidebar" box-="square">
+    <div flex-="row" space-="px:1">
+      <button flex-="grow" size-="small">[C] Chat &#xf4ad;</button>
+    </div>
+    <div flex-="col" space-="px:1" is-="typography-block">
+      <div>&#xf4ad; <code>&lt;C-c&gt;</code> New Chat</div>
+      <div>&#xf1da; <code>&lt;C-h&gt;</code> History</div>
+      <div>&#xf0c7; <code>&lt;C-s&gt;</code> Save Chat</div>
+      <div>&#xf1f8; <code>&lt;C-d&gt;</code> Delete Chat</div>
+      <hr />
+      <div>&#xf085; <code>&lt;C-o&gt;</code> Options</div>
+      <div>&#xf2f1; <code>&lt;C-r&gt;</code> Reset Thread</div>
+      <div>&#xf05a; <code>&lt;C-i&gt;</code> Information</div>
+      <div>&#xf059; <code>&lt;C-q&gt;</code> Help</div>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="chat-container">
+    <div flex-="row"><span is-="badge" variant-="background0">AI Assistant</span></div>
+
+    <div flex-="col gap:1" space-="px:1" id="chat-messages">
+      <div
+        flex-="col gap:1"
+        is-="typography-block"
+        box-="round contain:none"
+        class="message system"
+      >
+        <div flex-="row justify:between">
+          <span is-="badge" variant-="background0"><strong>System</strong></span>
+          <span is-="badge" variant-="background0">10:30 AM</span>
+        </div>
+        <p space-="px:1">
+          Welcome to WebTUI Chat! I'm your terminal-based AI assistant. How can I help you today?
+        </p>
+      </div>
+
+      <div
+        flex-="col gap:1"
+        is-="typography-block"
+        box-="round contain:none"
+        class="message user"
+      >
+        <div flex-="row justify:between">
+          <span is-="badge" variant-="background0"><strong>User</strong></span>
+          <span is-="badge" variant-="background0">10:31 AM</span>
+        </div>
+        <p space-="px:1">
+          Can you tell me about WebTUI and how to use it in my projects?
+        </p>
+      </div>
+
+      <div
+        flex-="col gap:1"
+        is-="typography-block"
+        box-="round contain:none"
+        class="message assistant"
+      >
+        <div flex-="row justify:between">
+          <span is-="badge" variant-="background0"><strong>Assistant</strong></span>
+          <span is-="badge" variant-="background0">10:31 AM</span>
+        </div>
+        <p space-="px:1">
+          WebTUI is a modular CSS Terminal-like UI library that helps you create terminal-inspired interfaces for the web. Here's how to get started:
+        </p>
+        <pre space-="px:1">
+# Install WebTUI
+npm install @webtui/css
+
+# Import in your project
+import '@webtui/css';
+
+# Use WebTUI components
+&lt;div box-="square"&gt;
+  &lt;span is-="badge"&gt;Hello WebTUI!&lt;/span&gt;
+&lt;/div&gt;
+        </pre>
+        <p space-="px:1">
+          You can also add themes like Nord or Catppuccin for different color schemes. Would you like to see more examples?
+        </p>
+      </div>
+
+      <div
+        flex-="col gap:1"
+        is-="typography-block"
+        box-="round contain:none"
+        class="message user"
+      >
+        <div flex-="row justify:between">
+          <span is-="badge" variant-="background0"><strong>User</strong></span>
+          <span is-="badge" variant-="background0">10:33 AM</span>
+        </div>
+        <p space-="px:1">
+          Yes, please show me how to create a button with different variants.
+        </p>
+      </div>
+
+      <div
+        flex-="col gap:1"
+        is-="typography-block"
+        box-="round contain:none"
+        class="message assistant typing"
+      >
+        <div flex-="row justify:between">
+          <span is-="badge" variant-="background0"><strong>Assistant</strong></span>
+          <span is-="badge" variant-="background0">10:33 AM</span>
+        </div>
+        <p space-="px:1" class="typing-indicator">
+          <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+        </p>
+      </div>
+    </div>
+
+    <div flex-="row gap:1" id="chat-input" space-="px:1">
+      <input type="text" placeholder="Type your message here..." flex-="grow" />
+      <button variant-="background1">&#xf1d8; Send</button>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="info-panel">
+    <div flex-="row">
+      <span is-="badge" variant-="background0">Information</span>
+    </div>
+
+    <div flex-="col gap:1" space-="px:1">
+      <h2>Chat Settings</h2>
+      
+      <div flex-="col gap:1">
+        <div flex-="row justify:between">
+          <span>Model:</span>
+          <span is-="badge" variant-="background1">WebTUI GPT-4</span>
+        </div>
+        <div flex-="row justify:between">
+          <span>Temperature:</span>
+          <span is-="badge" variant-="background1">0.7</span>
+        </div>
+        <div flex-="row justify:between">
+          <span>Max Length:</span>
+          <span is-="badge" variant-="background1">4096 tokens</span>
+        </div>
+      </div>
+
+      <h3>Conversation Stats</h3>
+      <div flex-="col gap:1">
+        <div flex-="row justify:between">
+          <span>Messages:</span>
+          <span>4</span>
+        </div>
+        <div flex-="row justify:between">
+          <span>Tokens Used:</span>
+          <span>1,245 / 4,096</span>
+        </div>
+        <div flex-="row justify:between">
+          <span>Started:</span>
+          <span>10:30 AM</span>
+        </div>
+      </div>
+
+      <h3>Available Commands</h3>
+      <div flex-="col gap:1">
+        <div><code>/clear</code> - Clear conversation</div>
+        <div><code>/save</code> - Save conversation</div>
+        <div><code>/help</code> - Show help</div>
+        <div><code>/model [name]</code> - Change model</div>
+      </div>
+
+      <div flex-="row gap:1 wrap">
+        <button box-="round" variant-="background1">&#xf2f1; Reset</button>
+        <button box-="round" variant-="background1">&#xf0c7; Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #sidebar {
+    min-width: 24ch;
+    height: 100%;
+    --box-border-color: var(--background1);
+  }
+
+  #chat-container {
+    --box-border-color: var(--background1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  #info-panel {
+    --box-border-color: var(--background1);
+  }
+
+  #chat-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  #chat-input {
+    margin-top: auto;
+  }
+
+  .message {
+    --box-border-color: var(--background2);
+    max-width: 100%;
+  }
+
+  .message.system {
+    --box-border-color: var(--background3);
+  }
+
+  .message.user {
+    --box-border-color: var(--foreground2);
+  }
+
+  .message.assistant {
+    --box-border-color: var(--foreground1);
+  }
+
+  .typing-indicator {
+    display: flex;
+    align-items: center;
+    height: 1lh;
+  }
+
+  .dot {
+    animation: typing 1.5s infinite;
+    font-weight: bold;
+  }
+
+  .dot:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  .dot:nth-child(3) {
+    animation-delay: 1s;
+  }
+
+  @keyframes typing {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  pre {
+    white-space: pre;
+    overflow-x: auto;
+    background-color: var(--background1);
+    padding: 0.5lh 1ch;
+  }
+</style>

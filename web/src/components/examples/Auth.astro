@@ -1,0 +1,125 @@
+---
+
+---
+
+<div flex-="row gap:1 grow">
+  <div flex-="col gap:1" id="sidebar" box-="square">
+    <div flex-="row" space-="px:1">
+      <button flex-="grow" size-="small">[L] Login &#xf2f6;</button>
+    </div>
+    <div flex-="col" space-="px:1" is-="typography-block">
+      <div>&#xf2f6; <code>&lt;C-l&gt;</code> Login</div>
+      <div>&#xf234; <code>&lt;C-r&gt;</code> Register</div>
+      <div>&#xf084; <code>&lt;C-p&gt;</code> Password Reset</div>
+      <div>&#xf2f5; <code>&lt;C-o&gt;</code> Logout</div>
+      <hr />
+      <div>&#xf1fa; <code>&lt;C-s&gt;</code> Settings</div>
+      <div>&#xf013; <code>&lt;C-c&gt;</code> Configuration</div>
+      <div>&#xf05a; <code>&lt;C-h&gt;</code> Help</div>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="auth-container">
+    <div flex-="row"><span is-="badge" variant-="background0">Authentication</span></div>
+
+    <div flex-="col gap:1" space-="px:1">
+      <div flex-="row gap:1">
+        <button variant-="background2" box-="round">Login</button>
+        <button variant-="background1" box-="round">Register</button>
+      </div>
+
+      <div
+        flex-="col gap:1"
+        is-="typography-block"
+        box-="round contain:none"
+        class="auth-form"
+      >
+        <h2>Login to your account</h2>
+        <div flex-="col gap:1">
+          <div flex-="row gap:1 align:center">
+            <span>&#xf007;</span>
+            <input type="text" placeholder="Username" />
+          </div>
+          <div flex-="row gap:1 align:center">
+            <span>&#xf084;</span>
+            <input type="password" placeholder="Password" />
+          </div>
+          <div flex-="row justify:between">
+            <label>
+              <input type="checkbox" />
+              Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <div flex-="row gap:1">
+            <button flex-="grow">Login</button>
+            <button variant-="background1">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <div flex-="row justify:between" space-="px:1">
+        <span is-="badge" variant-="background1">Secure Connection &#xf023;</span>
+        <span is-="badge" variant-="green">Online &#xf111;</span>
+      </div>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="auth-info">
+    <div flex-="row">
+      <span is-="badge" variant-="background0">Information</span>
+    </div>
+
+    <div flex-="col gap:1" space-="px:1">
+      <h1>Welcome Back!</h1>
+
+      <p>
+        Login to access your account and continue your journey with WebTUI.
+      </p>
+
+      <h2>Security Tips</h2>
+      <ul>
+        <li>Use a strong password with mixed characters</li>
+        <li>Enable two-factor authentication for extra security</li>
+        <li>Never share your credentials with others</li>
+        <li>Check that you're on a secure connection</li>
+      </ul>
+
+      <h3>Need Help?</h3>
+      <p>
+        If you're having trouble logging in, please contact our support team
+        or try resetting your password.
+      </p>
+
+      <div flex-="row gap:1 wrap">
+        <button box-="round" variant-="background1">&#xf059; Help</button>
+        <button box-="round" variant-="background1">&#xf1fa; Support</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #sidebar {
+    min-width: 24ch;
+    height: 100%;
+    --box-border-color: var(--background1);
+  }
+
+  #auth-container {
+    --box-border-color: var(--background1);
+  }
+
+  #auth-info {
+    --box-border-color: var(--background1);
+  }
+
+  .auth-form {
+    --box-border-color: var(--background2);
+  }
+
+  input[type="checkbox"] {
+    min-width: auto;
+    margin-right: 0.5ch;
+  }
+</style>
