@@ -1,0 +1,11 @@
+# GitHub Pages Configuration
+
+# Use GitHub Actions to build and deploy the site
+build_and_deployment:
+  source: workflow
+
+# Enforce HTTPS
+force_https: true
+
+# Don't allow custom domains for now
+custom_domain_enforced: false
