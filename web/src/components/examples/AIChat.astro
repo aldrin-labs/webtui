@@ -2,7 +2,7 @@
 
 ---
 
-<div flex-="row gap:1 grow">
+<div flex-="row gap:1 grow" class="chat-layout">
   <div flex-="col gap:1" id="sidebar" box-="square">
     <div flex-="row" space-="px:1">
       <button flex-="grow" size-="small">[C] Chat &#xf4ad;</button>
@@ -122,11 +122,9 @@ import '@webtui/css';
   </div>
 
   <div flex-="col grow !basis" box-="square contain:!top" id="info-panel">
-    <div flex-="row">
-      <span is-="badge" variant-="background0">Information</span>
-    </div>
+    <div flex-="row"><span is-="badge" variant-="background0">Information</span></div>
 
-    <div flex-="col gap:1" space-="px:1">
+    <div flex-="col gap:1" space-="px:1" class="info-content">
       <h2>Chat Settings</h2>
       
       <div flex-="col gap:1">
@@ -177,6 +175,11 @@ import '@webtui/css';
 </div>
 
 <style>
+  .chat-layout {
+    height: 100%;
+    min-height: 80vh;
+  }
+
   #sidebar {
     min-width: 24ch;
     height: 100%;
@@ -187,24 +190,41 @@ import '@webtui/css';
     --box-border-color: var(--background1);
     display: flex;
     flex-direction: column;
+    height: 100%;
+    min-height: 80vh;
   }
 
   #info-panel {
     --box-border-color: var(--background1);
+    height: 100%;
+    min-height: 80vh;
+  }
+
+  .info-content {
+    height: calc(100% - 2rem);
+    overflow-y: auto;
   }
 
   #chat-messages {
     flex-grow: 1;
     overflow-y: auto;
+    max-height: calc(100% - 4rem);
+    min-height: 300px;
   }
 
   #chat-input {
     margin-top: auto;
+    position: sticky;
+    bottom: 0;
+    background-color: var(--background0);
+    padding: 0.5rem 0;
+    width: 100%;
   }
 
   .message {
     --box-border-color: var(--background2);
     max-width: 100%;
+    word-break: break-word;
   }
 
   .message.system {
@@ -252,5 +272,21 @@ import '@webtui/css';
     overflow-x: auto;
     background-color: var(--background1);
     padding: 0.5lh 1ch;
+  }
+
+  @media (max-width: 768px) {
+    .chat-layout {
+      flex-direction: column;
+    }
+
+    #sidebar, #info-panel {
+      min-width: 100%;
+      height: auto;
+      min-height: auto;
+    }
+
+    #chat-container {
+      min-height: 60vh;
+    }
   }
 </style>

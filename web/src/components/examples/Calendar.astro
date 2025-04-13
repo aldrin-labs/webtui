@@ -1,0 +1,287 @@
+---
+
+---
+
+<div flex-="row gap:1 grow" class="calendar-layout">
+  <div flex-="col gap:1" id="sidebar" box-="square">
+    <div flex-="row" space-="px:1">
+      <button flex-="grow" size-="small">[C] Calendar &#xf133;</button>
+    </div>
+    <div flex-="col" space-="px:1" is-="typography-block">
+      <div>&#xf133; <code>&lt;C-c&gt;</code> Calendar</div>
+      <div>&#xf271; <code>&lt;C-m&gt;</code> Month</div>
+      <div>&#xf073; <code>&lt;C-w&gt;</code> Week</div>
+      <div>&#xf017; <code>&lt;C-d&gt;</code> Day</div>
+      <hr />
+      <div>&#xf067; <code>&lt;C-n&gt;</code> New Event</div>
+      <div>&#xf0c5; <code>&lt;C-e&gt;</code> Export</div>
+      <div>&#xf1da; <code>&lt;C-h&gt;</code> History</div>
+      <div>&#xf013; <code>&lt;C-s&gt;</code> Settings</div>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="calendar-container">
+    <div flex-="row"><span is-="badge" variant-="background0">April 2023</span></div>
+
+    <div flex-="col gap:1" space-="px:1" id="calendar-content">
+      <div flex-="row justify:between align:center">
+        <button variant-="background1" size-="small">&#xf053; Previous</button>
+        <h2>April 2023</h2>
+        <button variant-="background1" size-="small">Next &#xf054;</button>
+      </div>
+
+      <div class="calendar-grid">
+        <div class="calendar-header">Sun</div>
+        <div class="calendar-header">Mon</div>
+        <div class="calendar-header">Tue</div>
+        <div class="calendar-header">Wed</div>
+        <div class="calendar-header">Thu</div>
+        <div class="calendar-header">Fri</div>
+        <div class="calendar-header">Sat</div>
+
+        <!-- Previous month days -->
+        <div class="calendar-day prev-month">26</div>
+        <div class="calendar-day prev-month">27</div>
+        <div class="calendar-day prev-month">28</div>
+        <div class="calendar-day prev-month">29</div>
+        <div class="calendar-day prev-month">30</div>
+        <div class="calendar-day prev-month">31</div>
+
+        <!-- Current month days -->
+        <div class="calendar-day">1</div>
+        <div class="calendar-day">2</div>
+        <div class="calendar-day">3</div>
+        <div class="calendar-day">4</div>
+        <div class="calendar-day">5</div>
+        <div class="calendar-day">6</div>
+        <div class="calendar-day">7</div>
+        <div class="calendar-day">8</div>
+        <div class="calendar-day has-event">9</div>
+        <div class="calendar-day">10</div>
+        <div class="calendar-day">11</div>
+        <div class="calendar-day has-event">12</div>
+        <div class="calendar-day">13</div>
+        <div class="calendar-day">14</div>
+        <div class="calendar-day selected">15</div>
+        <div class="calendar-day">16</div>
+        <div class="calendar-day">17</div>
+        <div class="calendar-day">18</div>
+        <div class="calendar-day has-event">19</div>
+        <div class="calendar-day">20</div>
+        <div class="calendar-day">21</div>
+        <div class="calendar-day">22</div>
+        <div class="calendar-day">23</div>
+        <div class="calendar-day">24</div>
+        <div class="calendar-day">25</div>
+        <div class="calendar-day has-event">26</div>
+        <div class="calendar-day">27</div>
+        <div class="calendar-day">28</div>
+        <div class="calendar-day">29</div>
+        <div class="calendar-day">30</div>
+
+        <!-- Next month days -->
+        <div class="calendar-day next-month">1</div>
+        <div class="calendar-day next-month">2</div>
+        <div class="calendar-day next-month">3</div>
+        <div class="calendar-day next-month">4</div>
+        <div class="calendar-day next-month">5</div>
+        <div class="calendar-day next-month">6</div>
+      </div>
+
+      <div flex-="row gap:1 wrap">
+        <button box-="round" variant-="background1">&#xf067; New Event</button>
+        <button box-="round" variant-="background1">&#xf0c5; Export</button>
+        <button box-="round" variant-="background1">&#xf1da; View All</button>
+      </div>
+    </div>
+  </div>
+
+  <div flex-="col grow !basis" box-="square contain:!top" id="event-panel">
+    <div flex-="row"><span is-="badge" variant-="background0">April 15, 2023</span></div>
+
+    <div flex-="col gap:1" space-="px:1" class="event-content">
+      <h2>Saturday, April 15</h2>
+      
+      <div flex-="col gap:1">
+        <div box-="square" space-="px:1" class="event-card">
+          <div flex-="row justify:between">
+            <span is-="badge" variant-="background1">9:00 AM - 10:30 AM</span>
+            <span is-="badge" variant-="background2">Meeting</span>
+          </div>
+          <h3>Team Standup</h3>
+          <p>Weekly team meeting to discuss project progress and blockers.</p>
+          <div flex-="row justify:between">
+            <span>&#xf276; Conference Room A</span>
+            <span>&#xf0c0; 8 Attendees</span>
+          </div>
+        </div>
+
+        <div box-="square" space-="px:1" class="event-card">
+          <div flex-="row justify:between">
+            <span is-="badge" variant-="background1">1:00 PM - 3:00 PM</span>
+            <span is-="badge" variant-="background2">Workshop</span>
+          </div>
+          <h3>WebTUI Development</h3>
+          <p>Working session to improve the WebTUI component library.</p>
+          <div flex-="row justify:between">
+            <span>&#xf276; Virtual</span>
+            <span>&#xf0c0; 5 Attendees</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>Upcoming Events</h3>
+      <div flex-="col gap:1">
+        <div flex-="row justify:between" class="upcoming-event">
+          <span>Apr 19 - Project Deadline</span>
+          <span is-="badge" variant-="background1">4 days</span>
+        </div>
+        <div flex-="row justify:between" class="upcoming-event">
+          <span>Apr 26 - Team Lunch</span>
+          <span is-="badge" variant-="background1">11 days</span>
+        </div>
+        <div flex-="row justify:between" class="upcoming-event">
+          <span>May 3 - Quarterly Review</span>
+          <span is-="badge" variant-="background1">18 days</span>
+        </div>
+      </div>
+
+      <div flex-="row gap:1 wrap">
+        <button box-="round" variant-="background1">&#xf044; Edit</button>
+        <button box-="round" variant-="background1">&#xf1f8; Delete</button>
+        <button box-="round" variant-="background1">&#xf0c5; Duplicate</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .calendar-layout {
+    height: 100%;
+    min-height: 80vh;
+  }
+
+  #sidebar {
+    min-width: 24ch;
+    height: 100%;
+    --box-border-color: var(--background1);
+  }
+
+  #calendar-container {
+    --box-border-color: var(--background1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 80vh;
+  }
+
+  #event-panel {
+    --box-border-color: var(--background1);
+    height: 100%;
+    min-height: 80vh;
+  }
+
+  .event-content {
+    height: calc(100% - 2rem);
+    overflow-y: auto;
+  }
+
+  #calendar-content {
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    margin: 1lh 0;
+  }
+
+  .calendar-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5lh 0;
+    color: var(--foreground1);
+  }
+
+  .calendar-day {
+    text-align: center;
+    padding: 0.5lh 0;
+    border: 1px solid var(--background1);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .calendar-day:hover {
+    background-color: var(--background1);
+  }
+
+  .calendar-day.selected {
+    background-color: var(--background2);
+    font-weight: bold;
+  }
+
+  .calendar-day.prev-month,
+  .calendar-day.next-month {
+    color: var(--foreground2);
+  }
+
+  .calendar-day.has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--foreground1);
+  }
+
+  .event-card {
+    --box-border-color: var(--background2);
+    margin-bottom: 0.5lh;
+  }
+
+  .upcoming-event {
+    padding: 0.3lh 0;
+    border-bottom: 1px solid var(--background1);
+  }
+
+  .upcoming-event:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    .calendar-layout {
+      flex-direction: column;
+    }
+
+    #sidebar, #event-panel {
+      min-width: 100%;
+      height: auto;
+      min-height: auto;
+    }
+
+    #calendar-container {
+      min-height: 60vh;
+    }
+
+    .calendar-grid {
+      font-size: 0.9em;
+    }
+  }
+</style>
+
+<script client:load>
+  // Select calendar day when clicking on it
+  document.querySelectorAll('.calendar-day').forEach(day => {
+    day.addEventListener('click', () => {
+      document.querySelectorAll('.calendar-day').forEach(d => {
+        d.classList.remove('selected');
+      });
+      day.classList.add('selected');
+    });
+  });
+</script>

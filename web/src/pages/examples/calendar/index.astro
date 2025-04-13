@@ -1,0 +1,23 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navbar from '@/components/Navbar.astro';
+import ThemeSwitcher from '@/components/ThemeSwitcher.astro';
+import Calendar from '@/components/examples/Calendar.astro';
+import Breadcrumb from '@/components/Breadcrumb.astro';
+---
+
+<Layout>
+  <main flex-="grow col">
+    <Navbar />
+    <div flex-="col grow" space-="px:1">
+      <ThemeSwitcher />
+      <Breadcrumb paths={[
+        { label: 'Examples', href: '/webtui/examples/' },
+        { label: 'Calendar', href: '/webtui/examples/calendar/' }
+      ]} />
+      <div flex-="col grow">
+        <Calendar />
+      </div>
+    </div>
+  </main>
+</Layout>
