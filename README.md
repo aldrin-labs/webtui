@@ -4,12 +4,18 @@ Modular CSS Terminal-like UI library
 
 Read the docs at https://webtui.ironclad.sh
 
+[![Deploy Website to Pages](https://github.com/aldrin-labs/webtui/actions/workflows/web.yml/badge.svg)](https://github.com/aldrin-labs/webtui/actions/workflows/web.yml)
+
 1. Clone the repo
 2. `cd` into the repo
 3. Run `bun i`
 5. Run `bun run dev` to start the dev server
 
 For feature requests please open an issue.
+
+## Deployment
+
+The documentation site is automatically deployed to GitHub Pages when changes are pushed to the `master` branch. The deployment is handled by the GitHub Actions workflow defined in `.github/workflows/web.yml`.
 
 ## TODO
 

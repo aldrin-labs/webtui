@@ -6,6 +6,9 @@ import rehypeTabIndex from '@webtui/rehype-tabindex';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://aldrin-labs.github.io',
+  base: '/webtui',
+  trailingSlash: 'always',
   redirects: {
     '/docs': '/start/intro',
     '/start': '/start/intro',
